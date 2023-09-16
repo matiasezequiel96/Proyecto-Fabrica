@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+  <div class="card-header">
+    <strong> {{ customer_record.nombre_pieza }} </strong>  
+  </div>
+    <div class="card-body">
+        <p class="card-text">
+            <strong>Material: </strong>{{ customer_record.material }}</p>
+
+        <p class="card-text">
+        <strong>Molde: </strong>{{ customer_record.numero_molde }}</p>
+        
+    
+    </div>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-dark">Volver</a>
+
+<a href="{% url 'update_record' customer_record.id %}" class="btn btn-dark">Modificar</a>
+
+<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Eliminar</a>
+
+
+
+{% endblock %}
